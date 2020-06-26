@@ -11,15 +11,6 @@ NCBI download and Orthofinder analysis
 ls /home/maineBK/shared_data/filtered_genome_assemblies/
 ```
 
-
-Organism       |  Our Data      | NCBI-Assemblies | NCBI-Genomes
--------------  | -------------- | -------------   | ------------
-Herbaspirillium| 4              | 34    | 12
-Rhizobium      | 1              | 309    | 62
-Rothia         | 1              | 76    | 5
-Kocuria        | 1              | 57   | 13
-Streptomyces   | 13             | 1,185    | 338
-
 ## What we will be doing
 
 We will be using **Orthofinder** for our main comparative genomic analysis. The manual is very detailed so take some time to readit. To run the program we will need some genomes to compare.
