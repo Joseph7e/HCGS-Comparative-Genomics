@@ -1,10 +1,6 @@
 # HCGS-Comprative-Genomics
 NCBI download and Orthofinder analysis
 
-
-
-# MDIBL-T3-WGS-Comparative
-
 ## Our Starting data
 
 ```bash
