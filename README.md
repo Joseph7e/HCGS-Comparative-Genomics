@@ -8,7 +8,7 @@ NCBI download and Orthofinder analysis
 ## Our Starting data
 
 ```bash
-ls /home/maineBK/shared_data/filtered_genome_assemblies/
+ls /home/share/workshop/faa_files/
 ```
 
 ## What we will be doing
@@ -64,6 +64,10 @@ This file has a lot of useful information. For now we really care about column 2
 ```bash
 # download the file
 wget "ftp://ftp.ncbi.nlm.nih.gov/genomes/GENOME_REPORTS/prokaryotes.txt"
+
+# view it
+tabview prokaryotes.txt
+
 # grep for species in question and view.
 grep -i "Staphylococcus" prokaryotes.txt | grep REFR | tabview -
 
