@@ -9,7 +9,7 @@ ls /home/share/workshop/faa_files/
 
 ## What we will be doing
 
-We will be using **Orthofinder** for our main comparative genomic analysis. The manual is very detailed so take some time to readit. To run the program we will need some genomes to compare.
+We will be using **Orthofinder** for our main comparative genomic analysis. The manual is very detailed, I recommend taking some time to read it. To run the program we will need some genomes to compare.
 
 Orhtofinder Manual: https://github.com/davidemms/OrthoFinder
 
