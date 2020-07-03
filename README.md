@@ -70,15 +70,15 @@ grep -i "Staphylococcus" prokaryotes.txt | grep REFR | tabview -
 # print the download commands
 grep "Staphylococcus" prokaryotes.txt | grep REFR | awk -F'\t' '{print "wget "$21"/*protein.faa.gz"}'
 
-# download all the faa files automatically.
-grep "Staphylococcus" prokaryotes.txt | grep REFR | awk -F'\t' '{print $21"/*protein.faa.gz"}' | xargs -P16 wget -i
+# download all the faa files automatically. -P is the number of processes at a time.
+grep "Staphylococcus" prokaryotes.txt | grep REFR | awk -F'\t' '{print $21"/*protein.faa.gz"}' | xargs -P 1 wget -i
 
-# or even better, rename the files as you go
+# or even better, rename the files as you go. (Delete the files created from the previous command before proceeding).
 grep "Staphylococcus" prokaryotes.txt | grep REFR | sed 's/ /_/g' | awk -F'\t' '{print $1"_"$19".faa.gz",$21"/*protein.faa.gz"}' | xargs -n 2 -P 1 wget -O
 ```
 
 
-Remove the empty files, some of them don't have annotations, so lets remove them.
+Remove the empty files, some of them don't have annotations and it will mess up the next part.
 
 ```bash
 zgrep -c '>' *.faa.gz
