@@ -65,16 +65,16 @@ wget "ftp://ftp.ncbi.nlm.nih.gov/genomes/GENOME_REPORTS/prokaryotes.txt"
 tabview prokaryotes.txt
 
 # grep for species in question and view.
-grep -i "Staphylococcus" prokaryotes.txt | grep REFR | tabview -
+grep -i "Staphylococcus" prokaryotes.txt | grep REPR | tabview -
 
 # print the download commands
-grep "Staphylococcus" prokaryotes.txt | grep REFR | awk -F'\t' '{print "wget "$21"/*protein.faa.gz"}'
+grep "Staphylococcus" prokaryotes.txt | grep REPR | awk -F'\t' '{print "wget "$21"/*protein.faa.gz"}'
 
 # download all the faa files automatically. -P is the number of processes at a time.
-grep "Staphylococcus" prokaryotes.txt | grep REFR | awk -F'\t' '{print $21"/*protein.faa.gz"}' | xargs -P 1 wget -i
+grep "Staphylococcus" prokaryotes.txt | grep REPR | awk -F'\t' '{print $21"/*protein.faa.gz"}' | xargs -P 1 wget -i
 
 # or even better, rename the files as you go. (Delete the files created from the previous command before proceeding).
-grep "Staphylococcus" prokaryotes.txt | grep REFR | sed 's/ /_/g' | awk -F'\t' '{print $1"_"$19".faa.gz",$21"/*protein.faa.gz"}' | xargs -n 2 -P 1 wget -O
+grep "Staphylococcus" prokaryotes.txt | grep REPR | sed 's/ /_/g' | awk -F'\t' '{print $1"_"$19".faa.gz",$21"/*protein.faa.gz"}' | xargs -n 2 -P 1 wget -O
 ```
 
 
@@ -123,9 +123,9 @@ The input to the program is a directory containing a FAA file for each species.
 
 ```bash
 # view the manual
-orthofinder2 --help
+orthofinder --help
 # run the program, it will take some time
-nohup time orthofinder2 -t 16 -a 16 -S diamond -f ./ &
+nohup time orthofinder -t 16 -a 16 -S diamond -f ./ &
 ```
 
 ## Examine the output files
